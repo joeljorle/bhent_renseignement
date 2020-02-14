@@ -1,0 +1,58 @@
+
+/**
+ * The Profil entity.
+ * @author joel jorle
+ */
+
+entity Profile {
+    /** Le_genre */
+    sexe String 
+    /** age */
+    age  Integer 
+    /** Lieu_de_residence */
+    residentState String
+    /** numero_de_telephone */
+    phone Integer
+    /** nom_artiste */
+    artistName String
+    /** categorie_de_musique */
+    categorie Musictype
+    /** Autre_categorie_de_musique*/
+    otherMusicType String
+    /**avez_vous_participer_a_un_evenement*/
+    eventParticipation Boolean
+    /**nom_de_levenement */
+    eventParticipationName String
+    /**temps_dexperience */
+    experienceTime Integer
+}
+
+
+/**
+ * The music enum.
+ * @author joel jorle
+ */
+
+enum Musictype
+{
+/**chant*/
+CHANT,
+ /**slam*/
+SLAM,
+ /**hip_hop*/
+HIPHOP,
+ /**dance*/
+DANCE,
+ /**autre_type_de_musique*/
+OHTHER
+}
+
+
+/**
+ * One to one relationship.
+ */
+relationship OneToOne {
+    Profile{user(firstName)} to User
+}
+
+
