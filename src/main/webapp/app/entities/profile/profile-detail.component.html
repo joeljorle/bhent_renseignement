@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="profile">
+            <h2><span>Profile</span> {{profile.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span ngbTooltip="Le_genre">Sexe</span></dt>
+                <dd>
+                    <span>{{profile.sexe}}</span>
+                </dd>
+                <dt><span ngbTooltip="age">Age</span></dt>
+                <dd>
+                    <span>{{profile.age}}</span>
+                </dd>
+                <dt><span ngbTooltip="Lieu_de_residence">Resident State</span></dt>
+                <dd>
+                    <span>{{profile.residentState}}</span>
+                </dd>
+                <dt><span ngbTooltip="numero_de_telephone">Phone</span></dt>
+                <dd>
+                    <span>{{profile.phone}}</span>
+                </dd>
+                <dt><span ngbTooltip="nom_artiste">Artist Name</span></dt>
+                <dd>
+                    <span>{{profile.artistName}}</span>
+                </dd>
+                <dt><span ngbTooltip="categorie_de_musique">Categorie</span></dt>
+                <dd>
+                    <span>{{profile.categorie}}</span>
+                </dd>
+                <dt><span ngbTooltip="Autre_categorie_de_musique">Other Music Type</span></dt>
+                <dd>
+                    <span>{{profile.otherMusicType}}</span>
+                </dd>
+                <dt><span ngbTooltip="avez_vous_participer_a_un_evenement">Event Participation</span></dt>
+                <dd>
+                    <span>{{profile.eventParticipation}}</span>
+                </dd>
+                <dt><span ngbTooltip="nom_de_levenement">Event Participation Name</span></dt>
+                <dd>
+                    <span>{{profile.eventParticipationName}}</span>
+                </dd>
+                <dt><span ngbTooltip="temps_dexperience">Experience Time</span></dt>
+                <dd>
+                    <span>{{profile.experienceTime}}</span>
+                </dd>
+                <dt><span>User</span></dt>
+                <dd>
+                    {{profile.user?.firstName}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/profile', profile.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

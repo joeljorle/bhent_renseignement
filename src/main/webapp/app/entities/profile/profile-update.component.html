@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-profile-heading">Create or edit a Profile</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sexe" ngbTooltip="Le_genre">Sexe</label>
+                    <input type="text" class="form-control" name="sexe" id="field_sexe"
+                           formControlName="sexe"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_age" ngbTooltip="age">Age</label>
+                    <input type="number" class="form-control" name="age" id="field_age"
+                           formControlName="age"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_residentState" ngbTooltip="Lieu_de_residence">Resident State</label>
+                    <input type="text" class="form-control" name="residentState" id="field_residentState"
+                           formControlName="residentState"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_phone" ngbTooltip="numero_de_telephone">Phone</label>
+                    <input type="number" class="form-control" name="phone" id="field_phone"
+                           formControlName="phone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_artistName" ngbTooltip="nom_artiste">Artist Name</label>
+                    <input type="text" class="form-control" name="artistName" id="field_artistName"
+                           formControlName="artistName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_categorie" ngbTooltip="categorie_de_musique">Categorie</label>
+                    <select class="form-control" name="categorie" formControlName="categorie" id="field_categorie">
+                        <option value="CHANT">CHANT</option>
+                        <option value="SLAM">SLAM</option>
+                        <option value="HIPHOP">HIPHOP</option>
+                        <option value="DANCE">DANCE</option>
+                        <option value="OHTHER">OHTHER</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_otherMusicType" ngbTooltip="Autre_categorie_de_musique">Other Music Type</label>
+                    <input type="text" class="form-control" name="otherMusicType" id="field_otherMusicType"
+                           formControlName="otherMusicType"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_eventParticipation" ngbTooltip="avez_vous_participer_a_un_evenement">Event Participation</label>
+                    <input type="checkbox" class="form-control" name="eventParticipation" id="field_eventParticipation"
+                           formControlName="eventParticipation"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_eventParticipationName" ngbTooltip="nom_de_levenement">Event Participation Name</label>
+                    <input type="text" class="form-control" name="eventParticipationName" id="field_eventParticipationName"
+                           formControlName="eventParticipationName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_experienceTime" ngbTooltip="temps_dexperience">Experience Time</label>
+                    <input type="number" class="form-control" name="experienceTime" id="field_experienceTime"
+                           formControlName="experienceTime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="user">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption" *ngFor="let userOption of users; trackBy: trackById">{{userOption.firstName}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

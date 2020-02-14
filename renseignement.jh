@@ -35,15 +35,10 @@ entity Profile {
 
 enum Musictype
 {
-/**chant*/
 CHANT,
- /**slam*/
 SLAM,
- /**hip_hop*/
 HIPHOP,
- /**dance*/
 DANCE,
- /**autre_type_de_musique*/
 OHTHER
 }
 

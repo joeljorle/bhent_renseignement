@@ -1,0 +1,77 @@
+{
+    "name": "Profile",
+    "fields": [
+        {
+            "fieldName": "sexe",
+            "javadoc": "Le_genre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "age",
+            "javadoc": "age",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "residentState",
+            "javadoc": "Lieu_de_residence",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phone",
+            "javadoc": "numero_de_telephone",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "artistName",
+            "javadoc": "nom_artiste",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "categorie",
+            "javadoc": "categorie_de_musique",
+            "fieldType": "Musictype",
+            "fieldValues": "CHANT,SLAM,HIPHOP,DANCE,OHTHER"
+        },
+        {
+            "fieldName": "otherMusicType",
+            "javadoc": "Autre_categorie_de_musique",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eventParticipation",
+            "javadoc": "avez_vous_participer_a_un_evenement",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "eventParticipationName",
+            "javadoc": "nom_de_levenement",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "experienceTime",
+            "javadoc": "temps_dexperience",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "profile",
+            "relationshipName": "user",
+            "otherEntityField": "firstName",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200214113440",
+    "javadoc": "The Profil entity.\\n@author joel jorle",
+    "entityTableName": "profile",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
